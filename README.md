@@ -8,6 +8,8 @@ This is a docker image for nodejs development.
 $ ./build.sh
 
 $ ./run.sh
+or you can specify the directory to mount as src.
+$ ./run.sh somewhere/src/path
 
 ```
 

@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 cd `dirname $0`
 
-docker run --rm -v ${PWD}/src:/home/developer/src -it --name nodejs_15_dev nodejs_15_dev /usr/bin/fish
+if [ "$#" -ne 0 ]
+then
+  SRC=$1
+else
+  SRC=src
+fi
+
+MOUNT=$(realpath $SRC)
+
+docker run --rm -v ${MOUNT}:/home/developer/src -it --name nodejs_15_dev nodejs_15_dev /usr/bin/fish
