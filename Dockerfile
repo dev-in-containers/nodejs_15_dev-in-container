@@ -14,3 +14,4 @@ RUN apt update && \
   gpasswd -a developer sudo
 
 USER developer
+WORKDIR /home/developer
